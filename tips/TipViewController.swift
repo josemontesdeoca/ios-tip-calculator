@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TipViewController: UIViewController {
 
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
@@ -17,9 +17,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+
+        // Read the default tip from NSUserDefaults storage
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var defaultTipIndex = defaults.integerForKey("default_tip_index")
+
+        tipControl.selectedSegmentIndex = defaultTipIndex
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,8 +34,25 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
+        updateTipCalculation(tipControl.selectedSegmentIndex)
+    }
+
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+
+    @IBAction func unwindToSegue (segue : UIStoryboardSegue) {
+        // Read the default tip from NSUserDefaults storage that has changed
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var defaultTipIndex = defaults.integerForKey("default_tip_index")
+
+        tipControl.selectedSegmentIndex = defaultTipIndex
+        updateTipCalculation(defaultTipIndex)
+    }
+
+    func updateTipCalculation(tipIndexSelected : Int) {
         var tipPercentages = [0.18, 0.2, 0.25]
-        var tipSelected = tipPercentages[tipControl.selectedSegmentIndex]
+        var tipSelected = tipPercentages[tipIndexSelected]
 
         var billAmount = billField.text._bridgeToObjectiveC().doubleValue
         var tip = billAmount * tipSelected
@@ -37,10 +60,6 @@ class ViewController: UIViewController {
 
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
-    }
-
-    @IBAction func onTap(sender: AnyObject) {
-        view.endEditing(true)
     }
 }
 

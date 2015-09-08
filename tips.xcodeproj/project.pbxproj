@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		43B54B3F1B9E771400E831F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B54B3E1B9E771400E831F4 /* AppDelegate.swift */; };
-		43B54B411B9E771400E831F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B54B401B9E771400E831F4 /* ViewController.swift */; };
+		43B54B411B9E771400E831F4 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B54B401B9E771400E831F4 /* TipViewController.swift */; };
 		43B54B441B9E771400E831F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B54B421B9E771400E831F4 /* Main.storyboard */; };
 		43B54B461B9E771400E831F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43B54B451B9E771400E831F4 /* Images.xcassets */; };
 		43B54B491B9E771400E831F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43B54B471B9E771400E831F4 /* LaunchScreen.xib */; };
 		43B54B551B9E771400E831F4 /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B54B541B9E771400E831F4 /* tipsTests.swift */; };
+		43B54B5F1B9E96EE00E831F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B54B5E1B9E96EE00E831F4 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		43B54B391B9E771400E831F4 /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B54B3D1B9E771400E831F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43B54B3E1B9E771400E831F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43B54B401B9E771400E831F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43B54B401B9E771400E831F4 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		43B54B431B9E771400E831F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43B54B451B9E771400E831F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43B54B481B9E771400E831F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		43B54B4E1B9E771400E831F4 /* tipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B54B531B9E771400E831F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43B54B541B9E771400E831F4 /* tipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTests.swift; sourceTree = "<group>"; };
+		43B54B5E1B9E96EE00E831F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,8 @@
 		43B54B3B1B9E771400E831F4 /* tips */ = {
 			isa = PBXGroup;
 			children = (
+				43B54B601B9E96F800E831F4 /* View Controllers */,
 				43B54B3E1B9E771400E831F4 /* AppDelegate.swift */,
-				43B54B401B9E771400E831F4 /* ViewController.swift */,
 				43B54B421B9E771400E831F4 /* Main.storyboard */,
 				43B54B451B9E771400E831F4 /* Images.xcassets */,
 				43B54B471B9E771400E831F4 /* LaunchScreen.xib */,
@@ -110,6 +112,15 @@
 				43B54B531B9E771400E831F4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43B54B601B9E96F800E831F4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43B54B401B9E771400E831F4 /* TipViewController.swift */,
+				43B54B5E1B9E96EE00E831F4 /* SettingsViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43B54B411B9E771400E831F4 /* ViewController.swift in Sources */,
+				43B54B411B9E771400E831F4 /* TipViewController.swift in Sources */,
 				43B54B3F1B9E771400E831F4 /* AppDelegate.swift in Sources */,
+				43B54B5F1B9E96EE00E831F4 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +423,7 @@
 				43B54B5A1B9E771400E831F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43B54B5B1B9E771400E831F4 /* Build configuration list for PBXNativeTarget "tipsTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +432,7 @@
 				43B54B5D1B9E771400E831F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
